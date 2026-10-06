@@ -2,16 +2,15 @@
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upix Club | Premium Access</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Upix Club | Acesso Premium</title>
     <style>
-        /* Цветовая палитра: Темный фон + Яркий Неон (Киберпанк вайб) */
+        /* Paleta de Cores: Cyberpunk Neon */
         :root {
             --bg-black: #050507;
             --bg-card: #0c0d12;
             --neon-cyan: #00f3ff;
             --neon-purple: #bc13fe;
-            --neon-blue: #3a86ff;
             --text-main: #f8f9fa;
             --text-muted: #8b92a5;
             --border-color: #1a1c23;
@@ -29,93 +28,89 @@
             background-color: var(--bg-black);
             color: var(--text-main);
             line-height: 1.6;
-            padding: 2rem 1rem;
+            padding: 1.5rem 1rem;
             background-image: 
                 radial-gradient(circle at 15% 50%, rgba(188, 19, 254, 0.05), transparent 25%),
                 radial-gradient(circle at 85% 30%, rgba(0, 243, 255, 0.05), transparent 25%);
+            overflow-x: hidden;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 800px;
             margin: 0 auto;
+            width: 100%;
         }
 
-        /* --- Шапка сайта --- */
+        /* --- Шапка --- */
         .header {
             text-align: center;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
         }
 
         .logo {
-            font-size: 3.2rem;
+            font-size: 2.8rem;
             font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             background: linear-gradient(to right, var(--neon-cyan), var(--neon-purple));
             -webkit-background-clip: text;
             color: transparent;
             margin-bottom: 0.5rem;
-            text-shadow: 0 0 20px rgba(188, 19, 254, 0.3);
+            text-shadow: 0 0 15px rgba(188, 19, 254, 0.2);
         }
 
         .subtitle {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: var(--neon-cyan);
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
         .warning-box {
-            background-color: rgba(12, 13, 18, 0.8);
+            background-color: rgba(12, 13, 18, 0.9);
             border: 1px solid rgba(0, 243, 255, 0.3);
             border-left: 4px solid var(--neon-cyan);
             color: var(--text-muted);
-            padding: 1.2rem 1.5rem;
+            padding: 1.2rem;
             border-radius: 8px;
             font-size: 0.85rem;
-            display: inline-block;
-            margin-bottom: 2rem;
             text-align: left;
-            max-width: 700px;
-            line-height: 1.6;
-            box-shadow: 0 0 15px rgba(0, 243, 255, 0.05);
+            line-height: 1.5;
+            margin: 0 auto 2rem auto;
+            width: 100%;
         }
 
         .warning-box strong {
             color: var(--neon-cyan);
             text-transform: uppercase;
-            letter-spacing: 1px;
             display: block;
             margin-bottom: 0.5rem;
         }
 
-        /* --- Кнопки с неоновым свечением --- */
+        /* --- Кнопки --- */
         .btn-neon {
             background: transparent;
             color: var(--text-main);
             text-decoration: none;
-            padding: 1rem 2.5rem;
+            padding: 1rem 1.5rem;
             border-radius: 8px;
             font-weight: 800;
             font-size: 1rem;
             text-transform: uppercase;
-            transition: all 0.3s ease;
-            display: inline-flex;
+            display: flex;
             align-items: center;
             justify-content: center;
             border: 2px solid var(--neon-purple);
             box-shadow: 0 0 10px rgba(188, 19, 254, 0.2), inset 0 0 10px rgba(188, 19, 254, 0.1);
             cursor: pointer;
             width: 100%;
+            transition: all 0.3s ease;
         }
 
-        .btn-neon:hover {
-            background: var(--neon-purple);
-            box-shadow: 0 0 20px rgba(188, 19, 254, 0.6), inset 0 0 15px rgba(255, 255, 255, 0.2);
-            color: #fff;
-            transform: translateY(-2px);
+        .btn-neon:active {
+            transform: scale(0.96);
         }
 
         .btn-cyan {
@@ -123,44 +118,19 @@
             box-shadow: 0 0 10px rgba(0, 243, 255, 0.2), inset 0 0 10px rgba(0, 243, 255, 0.1);
         }
 
-        .btn-cyan:hover {
-            background: var(--neon-cyan);
-            box-shadow: 0 0 20px rgba(0, 243, 255, 0.6);
-            color: #000;
-        }
-
         /* --- Блок Telegram --- */
         .tg-section {
             background-color: var(--bg-card);
             border: 1px solid rgba(188, 19, 254, 0.3);
-            border-radius: 16px;
-            padding: 2.5rem;
-            margin-bottom: 3.5rem;
+            border-radius: 12px;
+            padding: 2rem 1.5rem;
+            margin-bottom: 2.5rem;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(188, 19, 254, 0.1);
-        }
-
-        .tg-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(188, 19, 254, 0.1) 0%, transparent 60%);
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .tg-content {
-            position: relative;
-            z-index: 1;
+            box-shadow: 0 5px 20px rgba(188, 19, 254, 0.05);
         }
 
         .tg-title {
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             color: var(--text-main);
             margin-bottom: 0.5rem;
             font-weight: 900;
@@ -168,46 +138,47 @@
 
         .tg-desc {
             color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto 1.5rem auto;
-            font-size: 1.05rem;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
         }
 
-        /* Механика копирования промокода */
         .promo-box {
-            background: rgba(0,0,0,0.5);
+            background: rgba(0,0,0,0.6);
             border: 1px dashed var(--neon-purple);
             display: inline-block;
-            padding: 1rem 2rem;
+            padding: 0.8rem 1.5rem;
             border-radius: 8px;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .promo-box:hover {
-            background: rgba(188, 19, 254, 0.1);
+            width: 100%;
+            max-width: 300px;
         }
 
         .promo-text {
             display: block;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 900;
             color: var(--neon-cyan);
             letter-spacing: 2px;
         }
 
         .promo-hint {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: var(--text-muted);
         }
 
-        /* --- Сетка Игр --- */
+        /* --- СЕТКА ИГР (ИСПРАВЛЕННАЯ ДЛЯ МОБИЛОК) --- */
         .games-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: 1fr; /* На телефонах строго 1 колонка */
+            gap: 1.5rem;
             margin-bottom: 3rem;
+        }
+
+        @media (min-width: 600px) {
+            .games-grid {
+                grid-template-columns: 1fr 1fr; /* На планшетах 2 колонки */
+            }
         }
 
         .game-card {
@@ -215,31 +186,25 @@
             border: 1px solid var(--border-color);
             border-radius: 12px;
             padding: 1.2rem;
-            transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            position: relative;
-        }
-
-        .game-card:hover {
-            border-color: var(--neon-cyan);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 243, 255, 0.15);
+            width: 100%;
         }
 
         .game-image {
             width: 100%;
-            height: 170px;
+            height: 160px;
             object-fit: cover;
             border-radius: 8px;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
             border: 1px solid rgba(255,255,255,0.05);
+            background-color: #1a1c23; /* Фон, если картинка не загрузится */
         }
 
         .game-title {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: var(--text-main);
             margin-bottom: 0.3rem;
             font-weight: 800;
@@ -247,22 +212,22 @@
 
         .game-badge {
             color: var(--neon-purple);
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 1rem;
+            letter-spacing: 1px;
+            margin-bottom: 0.8rem;
             font-weight: 700;
         }
 
         .game-desc {
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             margin-bottom: 1.5rem;
-            line-height: 1.5;
+            line-height: 1.4;
             flex-grow: 1;
         }
 
-        /* Всплывающее уведомление */
+        /* Уведомление */
         .toast {
             position: fixed;
             bottom: 30px;
@@ -270,30 +235,23 @@
             transform: translateX(-50%) translateY(100px);
             background: var(--neon-cyan);
             color: #000;
-            padding: 1rem 2rem;
+            padding: 1rem 1.5rem;
             border-radius: 50px;
             font-weight: 800;
-            font-size: 1rem;
-            box-shadow: 0 0 20px rgba(0, 243, 255, 0.5);
-            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 0.9rem;
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.4);
+            transition: transform 0.3s ease;
             z-index: 1000;
+            white-space: nowrap;
         }
         .toast.show { transform: translateX(-50%) translateY(0); }
 
-        /* Подвал */
         .footer {
             text-align: center;
-            padding-top: 2rem;
+            padding-top: 1.5rem;
             border-top: 1px solid var(--border-color);
             color: var(--text-muted);
-            font-size: 0.8rem;
-        }
-
-        @media (max-width: 768px) {
-            .logo { font-size: 2.5rem; }
-            .tg-section { padding: 1.5rem; }
-            .tg-title { font-size: 1.8rem; }
-            .game-image { height: 150px; }
+            font-size: 0.75rem;
         }
     </style>
 </head>
@@ -301,25 +259,53 @@
 
 <div class="container">
     
-    <!-- Шапка сайта -->
+    <!-- Header -->
     <header class="header">
         <h1 class="logo">Upix Club</h1>
         <p class="subtitle">Algoritmos • Táticas • Lucro Máximo</p>
         
         <div class="warning-box">
             <strong>⚠️ Leitura Obrigatória:</strong>
-            1. <b>Desligue a VPN.</b> Iniciar jogos com uma VPN ativada pode atrapalhar o algoritmo de pagamento e anular seus bônus de boas-vindas.<br>
-            2. <b>Controle sua banca.</b> Quaisquer táticas aumentam as chances de ganhar, mas não anulam os riscos. Deposite apenas o que você está mentalmente preparado para perder.<br>
-            3. <b>Estritamente 18+.</b> Todo o conteúdo e esquemas no site são destinados exclusivamente a usuários maiores de idade.
+            1. <b>Desligue a VPN.</b> Iniciar jogos com uma VPN ativada pode atrapalhar o algoritmo e anular seus bônus.<br>
+            2. <b>Controle sua banca.</b> Táticas aumentam as chances, mas não anulam riscos. Jogue com responsabilidade.<br>
+            3. <b>Estritamente 18+.</b> Conteúdo apenas para maiores de idade.
         </div>
     </header>
 
-    <!-- Блок Telegram с механикой промокода -->
+    <!-- Telegram Block -->
     <section class="tg-section">
         <div class="tg-content">
             <h2 class="tg-title">Canal Privado Upix</h2>
-            <p class="tg-desc">Estratégias diárias, bugs de slots e esquemas de ganhos seguros. Pegue seu bônus de primeiro depósito e junte-se a nós.</p>
+            <p class="tg-desc">Estratégias diárias e bugs de slots. Pegue seu bônus de depósito e junte-se a nós.</p>
             
             <div class="promo-box" onclick="copyPromo('UPIXWIN')">
                 <span class="promo-text">UPIXWIN</span>
-                <span class="promo-hint">Clique para copiar (+600%
+                <span class="promo-hint">Clique para copiar (+600% e 500FS)</span>
+            </div>
+
+            <a href="https://t.me/upixuk" class="btn-neon" target="_blank" rel="noopener">
+                🔓 Abrir Telegram
+            </a>
+        </div>
+    </section>
+
+    <!-- Games Grid -->
+    <section class="games-grid">
+        
+        <!-- Game 1 -->
+        <div class="game-card">
+            <!-- Добавлен onerror: если картинка сдохнет, покажет заглушку -->
+            <img src="https://bonustiime.com/wp-content/uploads/2025/09/Minedrop-slot-feature-multiplier-2-1024x576.webp" alt="MineDrop" class="game-image" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1a1c23/00f3ff?text=MINEDROP';">
+            <h3 class="game-title">MineDrop</h3>
+            <span class="game-badge">Top Pagamentos</span>
+            <p class="game-desc">Desça nas minas e procure cristais. Evite as minas para multiplicar sua aposta em até x1000.</p>
+            <a href="https://r1wtvmb.life/?open=register&p=rdz2" class="btn-neon btn-cyan" target="_blank">Jogar agora</a>
+        </div>
+
+        <!-- Game 2 -->
+        <div class="game-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwNnf_amsYq6pf-lKBD8195v-wTWA1VbkwPivV0AROWi_Ug9EUHDTi3BXw&s=10" alt="TowerRush" class="game-image" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1a1c23/00f3ff?text=TOWERRUSH';">
+            <h3 class="game-title">TowerRush</h3>
+            <span class="game-badge">Rodadas Rápidas</span>
+            <p class="game-desc">Construa a torre e colete dinheiro em cada novo andar. Quanto mais alto, maior o multiplicador.</p>
+            <a href="
