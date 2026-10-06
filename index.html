@@ -2,10 +2,9 @@
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upix Club | Acesso Premium</title>
     <style>
-        /* Paleta de Cores: Cyberpunk Neon */
         :root {
             --bg-black: #050507;
             --bg-card: #0c0d12;
@@ -21,34 +20,30 @@
             padding: 0;
             box-sizing: border-box;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            -webkit-tap-highlight-color: transparent;
         }
 
         body {
             background-color: var(--bg-black);
             color: var(--text-main);
             line-height: 1.6;
-            padding: 1.5rem 1rem;
+            padding: 2rem 1rem;
             background-image: 
                 radial-gradient(circle at 15% 50%, rgba(188, 19, 254, 0.05), transparent 25%),
                 radial-gradient(circle at 85% 30%, rgba(0, 243, 255, 0.05), transparent 25%);
-            overflow-x: hidden;
         }
 
         .container {
             max-width: 800px;
             margin: 0 auto;
-            width: 100%;
         }
 
-        /* --- Шапка --- */
         .header {
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
         }
 
         .logo {
-            font-size: 2.8rem;
+            font-size: 3rem;
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -60,16 +55,15 @@
         }
 
         .subtitle {
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: var(--neon-cyan);
             margin-bottom: 1.5rem;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         .warning-box {
-            background-color: rgba(12, 13, 18, 0.9);
+            background-color: rgba(12, 13, 18, 0.8);
             border: 1px solid rgba(0, 243, 255, 0.3);
             border-left: 4px solid var(--neon-cyan);
             color: var(--text-muted);
@@ -77,9 +71,7 @@
             border-radius: 8px;
             font-size: 0.85rem;
             text-align: left;
-            line-height: 1.5;
-            margin: 0 auto 2rem auto;
-            width: 100%;
+            margin-bottom: 2rem;
         }
 
         .warning-box strong {
@@ -89,7 +81,6 @@
             margin-bottom: 0.5rem;
         }
 
-        /* --- Кнопки --- */
         .btn-neon {
             background: transparent;
             color: var(--text-main);
@@ -99,9 +90,8 @@
             font-weight: 800;
             font-size: 1rem;
             text-transform: uppercase;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: inline-block;
+            text-align: center;
             border: 2px solid var(--neon-purple);
             box-shadow: 0 0 10px rgba(188, 19, 254, 0.2), inset 0 0 10px rgba(188, 19, 254, 0.1);
             cursor: pointer;
@@ -109,24 +99,18 @@
             transition: all 0.3s ease;
         }
 
-        .btn-neon:active {
-            transform: scale(0.96);
-        }
-
         .btn-cyan {
             border-color: var(--neon-cyan);
             box-shadow: 0 0 10px rgba(0, 243, 255, 0.2), inset 0 0 10px rgba(0, 243, 255, 0.1);
         }
 
-        /* --- Блок Telegram --- */
         .tg-section {
             background-color: var(--bg-card);
             border: 1px solid rgba(188, 19, 254, 0.3);
             border-radius: 12px;
             padding: 2rem 1.5rem;
-            margin-bottom: 2.5rem;
+            margin-bottom: 3rem;
             text-align: center;
-            box-shadow: 0 5px 20px rgba(188, 19, 254, 0.05);
         }
 
         .tg-title {
@@ -167,17 +151,17 @@
             color: var(--text-muted);
         }
 
-        /* --- СЕТКА ИГР (ИСПРАВЛЕННАЯ ДЛЯ МОБИЛОК) --- */
+        /* Жесткая сетка для отображения всех игр */
         .games-grid {
             display: grid;
-            grid-template-columns: 1fr; /* На телефонах строго 1 колонка */
+            grid-template-columns: 1fr;
             gap: 1.5rem;
             margin-bottom: 3rem;
         }
 
         @media (min-width: 600px) {
             .games-grid {
-                grid-template-columns: 1fr 1fr; /* На планшетах 2 колонки */
+                grid-template-columns: 1fr 1fr;
             }
         }
 
@@ -185,26 +169,22 @@
             background-color: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 12px;
-            padding: 1.2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            padding: 1.5rem;
             text-align: center;
-            width: 100%;
         }
 
         .game-image {
             width: 100%;
-            height: 160px;
+            height: 180px;
             object-fit: cover;
             border-radius: 8px;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
+            background-color: #1a1c23; /* Фон, если не грузится картинка */
             border: 1px solid rgba(255,255,255,0.05);
-            background-color: #1a1c23; /* Фон, если картинка не загрузится */
         }
 
         .game-title {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             color: var(--text-main);
             margin-bottom: 0.3rem;
             font-weight: 800;
@@ -212,22 +192,21 @@
 
         .game-badge {
             color: var(--neon-purple);
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 0.8rem;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
             font-weight: 700;
+            display: block;
         }
 
         .game-desc {
             color: var(--text-muted);
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             margin-bottom: 1.5rem;
-            line-height: 1.4;
-            flex-grow: 1;
+            line-height: 1.5;
         }
 
-        /* Уведомление */
         .toast {
             position: fixed;
             bottom: 30px;
@@ -239,7 +218,6 @@
             border-radius: 50px;
             font-weight: 800;
             font-size: 0.9rem;
-            box-shadow: 0 0 20px rgba(0, 243, 255, 0.4);
             transition: transform 0.3s ease;
             z-index: 1000;
             white-space: nowrap;
@@ -251,7 +229,7 @@
             padding-top: 1.5rem;
             border-top: 1px solid var(--border-color);
             color: var(--text-muted);
-            font-size: 0.75rem;
+            font-size: 0.8rem;
         }
     </style>
 </head>
@@ -259,7 +237,6 @@
 
 <div class="container">
     
-    <!-- Header -->
     <header class="header">
         <h1 class="logo">Upix Club</h1>
         <p class="subtitle">Algoritmos • Táticas • Lucro Máximo</p>
@@ -272,7 +249,6 @@
         </div>
     </header>
 
-    <!-- Telegram Block -->
     <section class="tg-section">
         <div class="tg-content">
             <h2 class="tg-title">Canal Privado Upix</h2>
@@ -289,23 +265,76 @@
         </div>
     </section>
 
-    <!-- Games Grid -->
+    <!-- ИГРЫ (РОВНО 6 БЛОКОВ) -->
     <section class="games-grid">
         
-        <!-- Game 1 -->
         <div class="game-card">
-            <!-- Добавлен onerror: если картинка сдохнет, покажет заглушку -->
-            <img src="https://bonustiime.com/wp-content/uploads/2025/09/Minedrop-slot-feature-multiplier-2-1024x576.webp" alt="MineDrop" class="game-image" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1a1c23/00f3ff?text=MINEDROP';">
+            <img src="https://bonustiime.com/wp-content/uploads/2025/09/Minedrop-slot-feature-multiplier-2-1024x576.webp" alt="MineDrop" class="game-image">
             <h3 class="game-title">MineDrop</h3>
             <span class="game-badge">Top Pagamentos</span>
             <p class="game-desc">Desça nas minas e procure cristais. Evite as minas para multiplicar sua aposta em até x1000.</p>
             <a href="https://r1wtvmb.life/?open=register&p=rdz2" class="btn-neon btn-cyan" target="_blank">Jogar agora</a>
         </div>
 
-        <!-- Game 2 -->
         <div class="game-card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwNnf_amsYq6pf-lKBD8195v-wTWA1VbkwPivV0AROWi_Ug9EUHDTi3BXw&s=10" alt="TowerRush" class="game-image" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1a1c23/00f3ff?text=TOWERRUSH';">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwNnf_amsYq6pf-lKBD8195v-wTWA1VbkwPivV0AROWi_Ug9EUHDTi3BXw&s=10" alt="TowerRush" class="game-image">
             <h3 class="game-title">TowerRush</h3>
             <span class="game-badge">Rodadas Rápidas</span>
             <p class="game-desc">Construa a torre e colete dinheiro em cada novo andar. Quanto mais alto, maior o multiplicador.</p>
-            <a href="
+            <a href="https://one-vv8531.com/casino/play/v_galaxsysgames:towerrush?p=rdz2" class="btn-neon btn-cyan" target="_blank">Jogar agora</a>
+        </div>
+
+        <div class="game-card">
+            <img src="https://static.templodeslots.es/pict/1197443/Aviamasters.png" alt="Aviamaster" class="game-image">
+            <h3 class="game-title">Aviamaster</h3>
+            <span class="game-badge">Multiplicador Alto</span>
+            <p class="game-desc">Mecânica de crash clássica. Observe os radares e pegue seus ganhos antes que o avião voe.</p>
+            <a href="https://one-vv8531.com/casino/play/v_bgmng:aviamasters?p=rdz2" class="btn-neon btn-cyan" target="_blank">Jogar agora</a>
+        </div>
+
+        <div class="game-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrvcbUCy2NvQ8CuXuv-JJhNzgkA6TmE2SsgZVsDCQVQQ&s=10" alt="Ice Fishing" class="game-image">
+            <h3 class="game-title">Ice Fishing</h3>
+            <span class="game-badge">Bônus Ocultos</span>
+            <p class="game-desc">Pesque peixes raros sob o gelo e ative rodadas de bônus incrivelmente lucrativas.</p>
+            <a href="https://one-vv8531.com/casino/play/v_evolution:1winicefishing?p=rdz2" class="btn-neon btn-cyan" target="_blank">Jogar agora</a>
+        </div>
+
+        <div class="game-card">
+            <img src="https://media.licdn.com/dms/image/v2/D4D22AQGWI1wPHhq83A/feedshare-shrink_800/feedshare-shrink_800/0/1689852646578?e=2147483647&v=beta&t=usXhsgeRUuHPDUuiW4jzJ3TOQUCDjGtgjqzSeviSXMY" alt="Doodle Crash" class="game-image">
+            <h3 class="game-title">Doodle Crash</h3>
+            <span class="game-badge">Hit da Semana</span>
+            <p class="game-desc">Pule nas plataformas cada vez mais alto. Jogo dinâmico com o prêmio crescendo rápido.</p>
+            <a href="https://one-vv8531.com/casino/play/v_barbarabang:doodlecrash?p=rdz2" class="btn-neon btn-cyan" target="_blank">Jogar agora</a>
+        </div>
+
+        <div class="game-card">
+            <img src="https://images.sigma.world/Falling-Pickaxe-Pixmove-Games.png" alt="Falling Pickaxe" class="game-image">
+            <h3 class="game-title">Falling Pickaxe</h3>
+            <span class="game-badge">Exclusivo</span>
+            <p class="game-desc">Controle a picareta caindo, colete barras de ouro e tesouros em uma queda sem fim.</p>
+            <a href="https://one-vv8531.com/casino/play/v_pixmove:fallingpickaxe?p=rdz2" class="btn-neon btn-cyan" target="_blank">Jogar agora</a>
+        </div>
+
+    </section>
+
+    <footer class="footer">
+        <p>🔞 Upix Club Premium © 2026.<br>Todos os direitos reservados.</p>
+    </footer>
+
+</div>
+
+<div class="toast" id="toast">✅ Promocode copiado!</div>
+
+<script>
+    function copyPromo(text) {
+        navigator.clipboard.writeText(text).then(() => {
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 2500);
+        });
+    }
+</script>
+
+</body>
+</html>
